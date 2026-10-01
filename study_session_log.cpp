@@ -70,8 +70,33 @@ public:
         return total;
     }
     // TODO (Part D): Write longestSession as a const member function.
+    int longestSession() const
+    {
+        int longest = 0;
+        for (int i = 0; i < count; i++)
+        {
+            if (sessionMinutes[i] > longest)
+            {
+                longest = sessionMinutes[i];
+            }
+        }
+        return longest;
+    }
     // TODO (Part D): Write size as a const member function.
+    int size() const
+    {
+        return count;
+    }
     // TODO (Part D): Write isEmpty as a const member function.
+    bool isEmpty() const
+    {
+        bool empty = false;
+        if (count == 0)
+        {
+            empty = true;
+        }
+        return empty;
+    }
 };
 
 int main()
