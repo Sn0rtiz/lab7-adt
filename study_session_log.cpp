@@ -97,6 +97,14 @@ public:
         }
         return empty;
     }
+    void printSessions() const
+    {
+      cout << "Stored sessions:" << endl;
+      for(int i=0; i<count; i++)
+        {
+            cout << "Session " << i + 1 << ": " << sessionMinutes[i] << " minutes" << endl;
+        }
+    }
 };
 
 int main()
@@ -124,6 +132,7 @@ int main()
     cout << "- Number of stored sessions: " << ClassLog.size() << endl;
     cout << "- Total minutes: " << ClassLog.totalMinutes() << endl;
     cout << "- Longest session: " << ClassLog.longestSession() << endl;
+    ClassLog.printSessions();
 
     return 0;
 }
