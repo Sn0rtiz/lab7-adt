@@ -47,7 +47,7 @@ public:
     bool addSession(int minutes)
     {
         bool added = false;
-        if (count != CAPACITY)
+        if (count == CAPACITY)
         {
             cout << "Cannot add session. Log is full." << endl;
         }
@@ -104,10 +104,26 @@ int main()
     // ===== Resolve these TODOs later (Part E) =====
 
     // TODO (Part E): Create a StudySessionLog object and print whether it starts empty.
+    StudySessionLog ClassLog;
+    cout << "Is the log empty? " << (ClassLog.isEmpty() ? "Yes" : "No") << endl;
     // TODO (Part E): Add four dummy session durations and attempt to add a fifth.
+    ClassLog.addSession(90);
+    ClassLog.addSession(50);
+    ClassLog.addSession(20);
+    ClassLog.addSession(37);
+    ClassLog.addSession(66); // This should fail
     // TODO (Part E): Print the number of stored sessions and whether the fifth session was accepted.
+    cout << "Number of stored sessions: " << ClassLog.size() << endl;
+    cout << "Is the log empty? " << (ClassLog.isEmpty() ? "Yes" : "No") << endl;
     // TODO (Part E): Print the total minutes and the longest stored session.
+    cout << "Total minutes: " << ClassLog.totalMinutes() << endl;
+    cout << "Longest session: " << ClassLog.longestSession() << endl;
     // TODO (Part E): Print descriptive English labels for all results.
+    cout << "Description of results:" << endl; 
+    cout << "- Is the log empty? " << (ClassLog.isEmpty() ? "Yes" : "No") << endl;
+    cout << "- Number of stored sessions: " << ClassLog.size() << endl;
+    cout << "- Total minutes: " << ClassLog.totalMinutes() << endl;
+    cout << "- Longest session: " << ClassLog.longestSession() << endl;
 
     return 0;
 }
